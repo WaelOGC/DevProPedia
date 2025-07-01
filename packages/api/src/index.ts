@@ -70,9 +70,10 @@ const startServer = async (portNumber: number): Promise<void> => {
 
       server.on('error', (err: NodeJS.ErrnoException) => {
         if (err.code === 'EADDRINUSE') {
-          console.log(`Port ${portNumber} is in use, trying ${portNumber + 1}...`);
-          server.close();
-          startServer(portNumber + 1);
+          console.log(
+            `Port ${portNumber} is in use, trying ${portNumber + 1}...`
+          );
+          startServer(portNumber + 1).then(resolve).catch(reject);
         } else {
           reject(err);
         }

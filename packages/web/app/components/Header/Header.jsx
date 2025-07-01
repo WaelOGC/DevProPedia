@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FiClock, FiBell, FiUser, FiSearch } from 'react-icons/fi';
 import { SiMetamask } from 'react-icons/si';
 import './Header.css';
